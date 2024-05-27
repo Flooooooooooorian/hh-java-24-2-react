@@ -1,12 +1,19 @@
 import "./HelloWorld.css"
+import {User} from "../User.ts";
 
+export type HelloWorldProps = {
+    param1?: string
+    param2?: string
+    fullName: string
+    user: User
+    myCallback: (result: string) => void
+}
 
+export default function HelloWorld(props: HelloWorldProps) {
 
+    console.log("props:", props)
 
-export default function HelloWorld() {
-    const name = "Florian";
-    const fullName = name + " Weber"
-
+    props.myCallback("HALLLOOOOOO")
 
     return (
         <>
@@ -14,10 +21,10 @@ export default function HelloWorld() {
                 Hallo
             </p>
             <p>
-                World!!!
+                {props.param1}
             </p>
             <p>
-                fullName: {fullName}
+                fullName: {props.fullName}
             </p>
         </>
     )
