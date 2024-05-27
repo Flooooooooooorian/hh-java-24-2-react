@@ -1,6 +1,7 @@
 import './App.css'
 import HelloWorld from "./helloworld/HelloWorld.tsx";
 import {User} from "./User.ts";
+import MyButton from "../MyButton.tsx";
 
 export default function App() {
 
@@ -35,6 +36,8 @@ export default function App() {
             <HelloWorld fullName={fullName} user={myUser} myCallback={callback} />
 
             {articles.map((article) => <p>{article.title}</p>)}
+
+            <MyButton />
 
         </div>
     )
